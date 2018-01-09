@@ -1,0 +1,63 @@
+﻿<!doctype html>
+
+<html lang="it">
+<head>
+	<meta charset="utf-8">
+	<title>Nessus Policy Constructor</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script>
+		function addplugin(x) {
+			tm=$("#mainplugin").val();
+			if (tm=="") {
+				$("#mainplugin").val(x);
+			} else {
+				$("#mainplugin").val(tm+","+x);
+			}
+		}
+		function rmall() {
+			$("#mainplugin").val("");
+		}
+	</script>
+	<style>
+		body {font-family: 'Roboto Condensed', sans-serif;}
+	</style>
+</head>
+<body>
+	<div id="page">
+	<div class="col-lg-12" id>
+		<img src="data:image/png;base64,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" style="width:80px;padding:10px;float:left;"/>
+		<h2 style="color:#6485C1;">Nessus Policy Constructor</h2>
+	<hr style="padding-left:200px;"/>
+	</div>
+	
+	<div class="col-lg-12 col-md-12">
+		<div class="well well-lg">
+			<div class="input-group"style="min-width:100%;">
+				<form action="download.cgi" method="post" target="_blank">
+					<div class="col-lg-9 col-md-9">
+						<label>Nome Policy:</label>
+					</div>
+					<div class="col-lg-3 col-md-3 text-right">
+						<a onclick="rmall()" class="btn btn-sm btn-info float-right" style="margin:0 5px 0px 100px;color:#FFF;text-shadow:none;" role="button"><i class="fa fa-eraser" aria-hidden="true"></i></a>
+						<a onclick="$(this).closest('form').submit()" class="btn btn-sm btn-info float-right" style="margin:0px;color:#FFF;text-shadow:none;" role="button"><i class="fa fa-download" aria-hidden="true"> <span style="font-family: 'Roboto Condensed', sans-serif;">XML</span></i></a>
+					</div>
+					<div class="col-lg-12 col-md-12">
+						<input type="text" name="policy" required>
+					</div>
+					<div class="col-lg-12 col-md-12">
+						<label><br/>Plugin List (es: 45875,120114 ...)</label>
+					</div>
+					<div class="col-lg-12 col-md-12">
+						<textarea id="mainplugin" rows="5" name="pp" class="form-control"></textarea>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div></body></html>
